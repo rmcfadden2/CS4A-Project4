@@ -43,6 +43,18 @@ public abstract class Contact {
         this.tags.add(tag);
     }
 
+    //Constructor for adding a multiple groups and tags
+    protected Contact(String name, String email, String phoneNumber, String type, String city, String address, ArrayList<String> group, ArrayList<String> tag) {
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.type = type;
+        this.city = city;
+        this.address = address;
+        this.groups = group;
+        this.tags = tag;
+    }
+
     //Getters and setters
     public String getName() {
         return this.name;
@@ -130,6 +142,52 @@ public abstract class Contact {
 
     public int getNumberTags() {
         return this.tags.size();
+    }
+
+    public boolean hasMissingInfo()
+    {
+        return name.equals("UNK")
+            || email.equals("UNK")
+            || phoneNumber.equals("UNK")
+            || city.equals("UNK")
+            || address.equals("UNK")
+            || groups.isEmpty()
+            || tags.isEmpty();
+    }
+
+    // returns string in format for the file
+    public String toFile()
+    {
+        String group = "";
+        String tag = "";
+
+        //Print out all groups
+        for(int i = 0; i < groups.size(); i++) {
+            group += groups.get(i);
+
+            if(i < groups.size() - 1)
+                group += ",";
+            
+        }
+
+        //Print out all tags
+        for(int i = 0; i < tags.size(); i++) {
+            tag += tags.get(i);
+
+            if(i <tags.size() - 1)
+                tag += ",";
+        }
+
+        return this.type + "|" +
+                this.name + "|" +
+                this.email + "|" +
+                this.phoneNumber + "|" +
+                this.city + "|" +
+                this.address + "|" +
+                group + "|" +
+                tag;
+
+
     }
 
     @Override

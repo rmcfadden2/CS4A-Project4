@@ -1,0 +1,5 @@
+Person|John Smith|john@gmail.com|555-1234|Irvine|123 Main St|Family,School|Close,Reliable|16|10/22/03
+Business|Acme Corp|contact@acme.com|555-9999|Tustin|456 Commerce Rd|Work|Supplier|201|www.acmecorp.com
+Person|Robert|UNK|UNK|UNK|UNK|UNK|UNK|UNK|UNK
+Person|UNK|UNK|UNK|UNK|UNK|||UNK|UNK
+Person|UNK|UNK|UNK|UNK|UNK|||UNK|UNK

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Person extends Contact {
     //Variables
     String apartmentNumber;
@@ -25,6 +27,13 @@ public class Person extends Contact {
         this.birthday = birthday;
     }
 
+    protected Person(String name, String email, String phoneNumber, String city, String address, ArrayList<String> group, ArrayList<String> tag, String apartmentNumber, String birthday) {
+        super(name, email, phoneNumber, "Person", city, address, group, tag);
+
+        this.apartmentNumber = apartmentNumber;
+        this.birthday = birthday;
+    }
+
     //Getters and Setters
     public String getAppartmentNumber() {
         return this.apartmentNumber;
@@ -40,6 +49,20 @@ public class Person extends Contact {
 
     public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public boolean hasMissingInfo()
+    {
+        return super.hasMissingInfo()
+            || apartmentNumber.equals("UNK")
+            || birthday.equals("UNK");
+    }
+
+    @Override
+    public String toFile()
+    {
+        return super.toFile() + "|" + this.apartmentNumber + "|" + this.birthday;
     }
 
     @Override
