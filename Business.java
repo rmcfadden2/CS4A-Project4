@@ -5,7 +5,7 @@ public class Business extends Contact {
 
     //Constructors
     protected Business() {
-        super();
+        super("Business");
 
         suite = "UNK";
         URL = "UNK";
@@ -26,25 +26,24 @@ public class Business extends Contact {
     }
 
     //Getters and Setters
-    public String getAppartmentNumber() {
-        return this.apartmentNumber;
+    public String getSuite() {
+        return this.suite;
     }
 
-    public void setApartmentNumber(String apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
+    public void setSuite(String suite) {
+        this.suite = suite;
     }
 
-    public String getBirthday() {
-        return this.birthday;
+    public String getURL() {
+        return this.URL;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "\nAppartment Number: " + this.apartmentNumber + "\nBirthday: " + this.birthday;
+        return super.toString() + "\nSuite: " + this.suite + "\nURL: " + this.URL;
     }
-}
-    
+} 
