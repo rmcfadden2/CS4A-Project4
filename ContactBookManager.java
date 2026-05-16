@@ -10,22 +10,7 @@ public class ContactBookManager {
 
     private ArrayList<Contact> contactList;
 
-    // HELPER FUNCTIONS
-    private boolean findContact(String contactName)
-    {
-        boolean found = false;
-
-        for(int i = 0; i < contactList.size(); ++i)
-        {
-            if(contactList.get(i).getName() == contactName)
-            {
-                found = true;
-            }
-        }
-        
-        return found;
-    }
-
+    // HELPER FUNCTION
     private boolean checkForGroup(Contact person,String group)
     {
         ArrayList<String> groups = new ArrayList<String>(person.getGroups());
@@ -33,7 +18,7 @@ public class ContactBookManager {
 
         for(int i = 0; i < groups.size(); ++i)
         {
-            if(groups.get(i) == group)
+            if(groups.get(i).equalsIgnoreCase(group))
             {
                 found = true;
             }
@@ -115,7 +100,7 @@ public class ContactBookManager {
     {
         boolean success = false;
 
-        if(!findContact(newContact.getName()))
+        if(findContactbyName(newContact.getName()) == -1)
         {
             contactList.add(newContact);
             success = true;
