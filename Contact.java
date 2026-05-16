@@ -190,6 +190,35 @@ public abstract class Contact {
 
     }
 
+    // /* Since individual contacts should be in charge of their own tags
+    //    I'll put add and remove tag in Contact.java and let CBM
+    //    handle/control which contact to change -MS*/
+    // public boolean addTag(String name, String tag)
+    // {
+    //     if(tag == null || tag.isBlank())    // If tags is empty
+    //     {
+    //         return false;
+    //     }
+
+    //     if(tags.contains(tag))  // If tag already exists
+    //     {
+    //         return false;
+    //     }
+
+    //     tags.add(tag);      // Add custom tag
+    //     return true;
+    // }
+
+    // public boolean removeTag(String name, String tag)
+    // {
+    //     // if person exists and list is not empty,
+    //         // Remove tag
+
+    //     // else
+    //         // Person not found
+    //         return false;
+    // }
+
     @Override
     public String toString() {
         String group = "";
