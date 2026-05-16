@@ -104,7 +104,7 @@ public abstract class Contact {
         this.address = address;
     }
 
-    public ArrayList getGroups() {
+    public ArrayList<String> getGroups() {
         return this.groups;
     }
 
@@ -112,7 +112,7 @@ public abstract class Contact {
         this.groups.add(group);
     }
 
-    public ArrayList getTags() {
+    public ArrayList<String> getTags() {
         return this.tags;
     }
 

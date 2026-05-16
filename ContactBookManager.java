@@ -10,6 +10,38 @@ public class ContactBookManager {
 
     private ArrayList<Contact> contactList;
 
+    // HELPER FUNCTIONS
+    private boolean findContact(String contactName)
+    {
+        boolean found = false;
+
+        for(int i = 0; i < contactList.size(); ++i)
+        {
+            if(contactList.get(i).getName() == contactName)
+            {
+                found = true;
+            }
+        }
+        
+        return found;
+    }
+
+    private boolean checkForGroup(Contact person,String group)
+    {
+        ArrayList<String> groups = new ArrayList<String>(person.getGroups());
+        boolean           found  = false;
+
+        for(int i = 0; i < groups.size(); ++i)
+        {
+            if(groups.get(i) == group)
+            {
+                found = true;
+            }
+        }
+        
+        return found;
+    }
+
 
     public ContactBookManager()
     {
@@ -77,6 +109,19 @@ public class ContactBookManager {
     public void add()
     {
         contactList.add(new Person());
+    }
+
+    public boolean addContact(Contact newContact)
+    {
+        boolean success = false;
+
+        if(!findContact(newContact.getName()))
+        {
+            contactList.add(newContact);
+            success = true;
+        }
+
+        return success;
     }
 
     public boolean editContact(int originalContactIndex, Contact newContact)
@@ -167,6 +212,51 @@ public class ContactBookManager {
         }
     }
 
+    public void viewGroupContacts(String group)
+    {
+        ArrayList<Contact> groupContactList = new ArrayList<Contact>();
+
+        for(int i = 0; i < contactList.size(); ++i)
+        {
+            if(checkForGroup(contactList.get(i),group))
+            {
+                groupContactList.add(contactList.get(i));
+            }
+        }
+
+        System.out.println("People from group \"" + group + "\":");
+
+        for(int i = 0; i < groupContactList.size(); ++i)
+        {
+            System.out.println(groupContactList.get(i).getName());
+        }
+    }
+
+    boolean assignGroup(int contactIndex, String group)
+    {
+        boolean success = false;
+
+        if(!checkForGroup(contactList.get(contactIndex),group))
+        {
+            contactList.get(contactIndex).addGroup(group);
+            success = true;
+        }
+
+        return success;
+    }
+
+    boolean unassignGroup(int contactIndex, String group)
+    {
+        boolean success = false;
+
+        if(checkForGroup(contactList.get(contactIndex),group))
+        {
+            contactList.get(contactIndex).removeGroup(contactIndex);
+            success = true;
+        }
+
+        return success;
+    }
 
     public void loadFile()
     {
