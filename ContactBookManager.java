@@ -224,7 +224,7 @@ public class ContactBookManager {
             }
         }
 
-        System.out.println("People from group \"" + group + "\":");
+        System.out.println("Contacts from group \"" + group + "\":");
 
         for(int i = 0; i < groupContactList.size(); ++i)
         {
@@ -232,7 +232,7 @@ public class ContactBookManager {
         }
     }
 
-    boolean assignGroup(int contactIndex, String group)
+    public boolean assignGroup(int contactIndex, String group)
     {
         boolean success = false;
 
@@ -245,7 +245,7 @@ public class ContactBookManager {
         return success;
     }
 
-    boolean unassignGroup(int contactIndex, String group)
+    public boolean unassignGroup(int contactIndex, String group)
     {
         boolean success = false;
 
