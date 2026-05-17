@@ -6,28 +6,28 @@ public class Business extends Contact {
     String URL;
 
     //Constructors
-    protected Business() {
+    public Business() {
         super("Business");
 
         suite = "UNK";
         URL = "UNK";
     }
 
-    protected Business(String name, String email, String phoneNumber, String city, String address, String suite, String URL) {
+    public Business(String name, String email, String phoneNumber, String city, String address, String suite, String URL) {
         super(name, email, phoneNumber, "Buisness", city, address);
 
         this.suite = suite;
         this.URL = URL;
     }
 
-    protected Business(String name, String email, String phoneNumber, String city, String address, String group, String tag, String suite, String URL) {
+    public Business(String name, String email, String phoneNumber, String city, String address, String group, String tag, String suite, String URL) {
         super(name, email, phoneNumber, "Business", city, address, group, tag);
 
         this.suite = suite;
         this.URL = URL;
     }
 
-    protected Business(String name, String email, String phoneNumber, String city, String address, ArrayList<String> group, ArrayList<String> tag, String suite, String URL) {
+    public Business(String name, String email, String phoneNumber, String city, String address, ArrayList<String> group, ArrayList<String> tag, String suite, String URL) {
         super(name, email, phoneNumber, "Business", city, address, group, tag);
 
         this.suite = suite;

@@ -6,28 +6,28 @@ public class Person extends Contact {
     String birthday;
 
     //Constructors
-    protected Person() {
+    public Person() {
         super("Person");
 
         apartmentNumber = "UNK";
         birthday = "UNK";
     }
 
-    protected Person(String name, String email, String phoneNumber, String city, String address, String apartmentNumber, String birthday) {
+    public Person(String name, String email, String phoneNumber, String city, String address, String apartmentNumber, String birthday) {
         super(name, email, phoneNumber, "Person", city, address);
 
         this.apartmentNumber = apartmentNumber;
         this.birthday = birthday;
     }
 
-    protected Person(String name, String email, String phoneNumber, String city, String address, String group, String tag, String apartmentNumber, String birthday) {
+    public Person(String name, String email, String phoneNumber, String city, String address, String group, String tag, String apartmentNumber, String birthday) {
         super(name, email, phoneNumber, "Person", city, address, group, tag);
 
         this.apartmentNumber = apartmentNumber;
         this.birthday = birthday;
     }
 
-    protected Person(String name, String email, String phoneNumber, String city, String address, ArrayList<String> group, ArrayList<String> tag, String apartmentNumber, String birthday) {
+    public Person(String name, String email, String phoneNumber, String city, String address, ArrayList<String> group, ArrayList<String> tag, String apartmentNumber, String birthday) {
         super(name, email, phoneNumber, "Person", city, address, group, tag);
 
         this.apartmentNumber = apartmentNumber;

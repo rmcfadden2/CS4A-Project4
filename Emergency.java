@@ -2,19 +2,19 @@ import java.util.ArrayList;
 
 public class Emergency extends Contact{
     //Constructors
-    protected Emergency() {
+    public Emergency() {
         super("Emergency");
     }
 
-    protected Emergency(String name, String email, String phoneNumber, String city, String address) {
+    public Emergency(String name, String email, String phoneNumber, String city, String address) {
         super(name, email, phoneNumber, "Emergency", city, address);
     }
 
-    protected Emergency(String name, String email, String phoneNumber, String city, String address, String group, String tag) {
+    public Emergency(String name, String email, String phoneNumber, String city, String address, String group, String tag) {
         super(name, email, phoneNumber, "Emergency", city, address, group, tag);
     }
 
-    protected Emergency(String name, String email, String phoneNumber, String city, String address, ArrayList<String> group, ArrayList<String> tag) {
+    public Emergency(String name, String email, String phoneNumber, String city, String address, ArrayList<String> group, ArrayList<String> tag) {
         super(name, email, phoneNumber, "Emergency", city, address, group, tag);
     }
 
