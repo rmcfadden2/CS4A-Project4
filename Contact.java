@@ -190,34 +190,46 @@ public abstract class Contact {
 
     }
 
-    // /* Since individual contacts should be in charge of their own tags
-    //    I'll put add and remove tag in Contact.java and let CBM
-    //    handle/control which contact to change -MS*/
-    // public boolean addTag(String name, String tag)
-    // {
-    //     if(tag == null || tag.isBlank())    // If tags is empty
-    //     {
-    //         return false;
-    //     }
+    /* Since individual contacts should be in charge of their own tags
+       I'll put add and remove tag in Contact.java and let CBM
+       handle/control which contact to change -MS*/
+    public boolean addTag(String tag)
+    {
+        
+        /* If no object or if isEmpty
+        trims tag in case of uncessary spaces*/
+        if(tag == null || tag.trim().isEmpty())    
+        {
+            return false;
+        }
+        
+        // Prevent duplicates(read list)
+        for(String t: tags)                 
+        {
+            if(t.equalsIgnoreCase(tag))
+            {
+                return false;
+            }
+        }
 
-    //     if(tags.contains(tag))  // If tag already exists
-    //     {
-    //         return false;
-    //     }
+        tags.add(tag);      // Add custom tag
+        return true;
+    }
 
-    //     tags.add(tag);      // Add custom tag
-    //     return true;
-    // }
-
-    // public boolean removeTag(String name, String tag)
-    // {
-    //     // if person exists and list is not empty,
-    //         // Remove tag
-
-    //     // else
-    //         // Person not found
-    //         return false;
-    // }
+    public boolean removeTag(String tag)
+    {   
+        // Index based since we change the list
+        for(int i = 0; i < tags.size(); i++)
+        {
+            if(tags.get(i).equalsIgnoreCase(tag))
+            {
+                tags.remove(i);
+                return true;
+            }
+        }
+        
+        return false;
+    }
 
     @Override
     public String toString() {
