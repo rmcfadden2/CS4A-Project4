@@ -116,9 +116,9 @@ public abstract class Contact {
         return this.tags;
     }
 
-    public void addTag(String tag) {
-        this.tags.add(tag);
-    }
+    // public void addTag(String tag) {
+    //     this.tags.add(tag);
+    // }
 
     public void removeGroup(int index) {
         this.groups.remove(index);
