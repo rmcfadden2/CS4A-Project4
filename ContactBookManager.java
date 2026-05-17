@@ -349,4 +349,14 @@ public class ContactBookManager {
         }
     }
 
+    public Contact getContact(int index)
+    {
+        if(index >= 0 && index < contactList.size())
+        {
+            return contactList.get(index);
+        }
+
+        return null;
+    }
+
 }
