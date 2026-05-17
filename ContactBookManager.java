@@ -243,6 +243,43 @@ public class ContactBookManager {
         return success;
     }
 
+    public boolean addTag(String contactName, String tag)
+    {
+        int i = findContactbyName(contactName); // Returns index, or -1
+        if(i == -1)
+        {
+            return false;
+        } 
+        return contactList.get(i).addTag(tag);  // 
+    }
+
+
+
+    public boolean removeTag(String contactName, String tag)
+    {
+        int i = findContactbyName(contactName);
+
+        if(i == -1)
+        {
+            return false;
+        }
+        return contactList.get(i).removeTag(tag);
+    }
+
+    public boolean deleteContact(String name)
+    {
+        int i = findContactbyName(name);
+
+        if(i == -1)
+        {
+            return false;
+        }
+
+        contactList.remove(i);
+        return true;
+    }
+    
+
     public void loadFile()
     {
         try {
